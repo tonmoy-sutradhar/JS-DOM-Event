@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment Box</title>
+  </head>
+  <body>
+    <h1>Enter your comment</h1>
+    <div id="cmnt-container">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit aperiam
+        nisi esse corrupti necessitatibus repellat adipisci. Deleniti, quibusdam
+        dolores error nihil id ratione laborum, illum explicabo accusantium
+        dolore voluptas maxime fuga perferendis, aperiam vero! Ea dicta
+        assumenda ullam distinctio? Repellendus explicabo accusamus cupiditate,
+        ad alias minus necessitatibus dolore ducimus! Nihil?
+      </p>
+      <p>
+        Autem eius, perferendis ea tempore, rem inventore dolore hic laboriosam
+        non a fugiat facilis! Itaque nesciunt unde voluptates veritatis
+        perferendis ab incidunt maxime aliquam quidem quos, provident harum
+        aperiam obcaecati possimus minus facilis explicabo quia ducimus fuga eos
+        nam autem tenetur. Iure officiis eius hic, dolores repellendus numquam
+        ullam veniam.
+      </p>
+      <p id="text-display">
+        Mollitia porro magni doloribus eligendi obcaecati similique sunt, libero
+        debitis molestias ea. Ipsa rem voluptates minus recusandae aliquam
+        saepe, et id omnis sed quia perferendis impedit. Fugit eius odio error
+        et quaerat necessitatibus consequatur nihil nulla laborum inventore
+        explicabo, nam aperiam vero quia modi aut maxime eum facere debitis?
+        Facere.
+      </p>
+    </div>
+    <div>
+      <textarea name="" id="new-cmnt" cols="60" rows="5"></textarea>
+      <br />
+      <button id="btn_post">Post</button>
+    </div>
+    <script src="JS/cmnt-box.js"></script>
+    <script>
+      // step-1: Add event listener to the post button
+      const btnPost = document
+        .getElementById("btn_post")
+        .addEventListener("click", function () {
+          // console.log("click the btn.");
+
+          // Step-2:Get the commnet inside the text area.
+          const cmntBox = document.getElementById("new-cmnt");
+          const newCmnt = cmntBox.value;
+          // console.log(newCmnt);
+
+          // step-3: Another way
+          const cmntContinr = document.getElementById("cmnt-container");
+          const para = document.createElement("p");
+          para.innerText = newCmnt;
+          cmntContinr.appendChild(para);
+
+          //  Step-4: Empty the cmnt box
+          cmntBox.value = "";
+        });
+    </script>
+  </body>
+</html>
