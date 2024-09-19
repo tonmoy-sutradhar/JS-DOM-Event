@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Event DOM</title>
+  </head>
+  <body>
+    <h1>JS Event DOM Summery</h1>
+    <h3 id="defultTxt">Default Text</h3>
+
+    <p id="input-txt-display">Input Default text</p>
+    <input id="input-field" type="text" />
+    <button id="btn-update">Update</button>
+
+    <br />
+    <br />
+
+    <button onclick="btnClick()">Onclick Event</button>
+    <button id="event-listener">Event listener</button>
+    <script src="JS/eventSummery.js"></script>
+    <script>
+      document
+        .getElementById("btn-update")
+        .addEventListener("click", function () {
+          // console.log("btn click");
+          const inputfld = document.getElementById("input-field");
+          //console.log(inputfld.value);//input file e inner value paite "Value" keyword use korte hoi./
+          const inputtxt = inputfld.value;
+          const p = document.getElementById("input-txt-display");
+          p.innerText = inputtxt;
+          inputfld.value = "";
+        });
+    </script>
+  </body>
+</html>
+
+<!-- const utext = document.getElementById("btn-update"); utext.innerText = "THE TEXT
+UPDATE AFTER CLICK BY UPDATE BUTTON!!"; -->
